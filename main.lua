@@ -1,7 +1,7 @@
 --// LOAD RAYFIELD
 local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))()
 
---// REMOVE NOTIFICAÇÕES DO RAYFIELD
+--// REMOVE NOTIFICAÃ‡Ã•ES DO RAYFIELD
 local OldNotify = Rayfield.Notify
 Rayfield.Notify = function(self, tbl)
     if tbl and tbl.Title then
@@ -377,7 +377,7 @@ Visual:CreateToggle({Name = "Player ESP", CurrentValue = false, Callback = funct
 Visual:CreateToggle({Name = "Name ESP", CurrentValue = false, Callback = function(v) Names = v end})
 Visual:CreateColorPicker({Name = "Name ESP Color", Color = Color3.fromRGB(0,255,0), Callback = function(v) NameESPColor = v end})
 
---// ANTI LAG MÁXIMO PARA MOBILE
+--// ANTI LAG MÃXIMO PARA MOBILE
 FPSUI:CreateToggle({
     Name = "Anti Lag",
     CurrentValue = false,
@@ -404,12 +404,12 @@ FPSUI:CreateToggle({
                     end
                 end
                 
-                Rayfield:Notify({Title = "Anti Lag", Content = "✅ Anti Lag MÁXIMO ativado para Mobile!", Duration = 6})
+                Rayfield:Notify({Title = "Anti Lag", Content = "âœ… Anti Lag MÃXIMO ativado para Mobile!", Duration = 6})
             else
                 settings().Rendering.QualityLevel = Enum.QualityLevel.Automatic
                 Lighting.GlobalShadows = true
                 Lighting.Technology = Enum.Technology.Future
-                Rayfield:Notify({Title = "Anti Lag", Content = "❌ Anti Lag desativado.", Duration = 4})
+                Rayfield:Notify({Title = "Anti Lag", Content = "âŒ Anti Lag desativado.", Duration = 4})
             end
         end)
     end
@@ -421,7 +421,7 @@ FPSUI:CreateToggle({
     Callback = function(v)
         ShowFPS = v
         FPSFrame.Visible = v
-        Rayfield:Notify({Title = "FPS Counter", Content = v and "✅ FPS Counter ativado." or "❌ FPS Counter desativado.", Duration = 3})
+        Rayfield:Notify({Title = "FPS Counter", Content = v and "âœ… FPS Counter ativado." or "âŒ FPS Counter desativado.", Duration = 3})
     end
 })
 
@@ -437,7 +437,7 @@ FPSUI:CreateDropdown({
     end
 })
 
---// ESP, LOOPS E NOTIFICAÇÕES (mantido)
+--// ESP, LOOPS E NOTIFICAÃ‡Ã•ES (mantido)
 local Highlights = {}
 local Drawings = {}
 
@@ -591,7 +591,7 @@ RunService.RenderStepped:Connect(function()
     end
 end)
 
---// NOTIFICAÇÕES
+--// NOTIFICAÃ‡Ã•ES
 Rayfield:Notify({
     Title = "Aimbot Hub Universal",
     Content = "Loaded / Carregado.",
@@ -603,6 +603,6 @@ task.wait(1)
 setclipboard("https://discord.gg/rZuYzZ7zvt")
 Rayfield:Notify({
     Title = "Discord",
-    Content = "✅ Link do Discord Copiado!\nLink Copied to Clipboard!",
+    Content = "âœ… Link do Discord Copiado!\nLink Copied to Clipboard!",
     Duration = 7
 })
