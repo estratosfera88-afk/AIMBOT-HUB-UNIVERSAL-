@@ -247,7 +247,7 @@ ToggleButton.BorderSizePixel = 0
 ToggleButton.Active = true
 ToggleButton.Visible = false
 
---// DRAG + STYLE
+--// DRAG + STYLE (mantido igual)
 local dragging = false
 local dragInput
 local dragStart
@@ -358,7 +358,6 @@ MobileTab:CreateDropdown({
     Callback = function(Option)
         AimPart = Option[1]
         LockedTarget = nil
-        Rayfield:Notify({Title = "Aim Part", Content = "Mirando em: " .. (AimPart == "Chest" and "Torso" or "Head"), Duration = 3})
     end
 })
 
@@ -377,7 +376,7 @@ Visual:CreateToggle({Name = "Player ESP", CurrentValue = false, Callback = funct
 Visual:CreateToggle({Name = "Name ESP", CurrentValue = false, Callback = function(v) Names = v end})
 Visual:CreateColorPicker({Name = "Name ESP Color", Color = Color3.fromRGB(0,255,0), Callback = function(v) NameESPColor = v end})
 
---// ANTI LAG MÃXIMO PARA MOBILE
+--// ANTI LAG (sem notify)
 FPSUI:CreateToggle({
     Name = "Anti Lag",
     CurrentValue = false,
@@ -403,13 +402,10 @@ FPSUI:CreateToggle({
                         obj.Material = Enum.Material.SmoothPlastic
                     end
                 end
-                
-                Rayfield:Notify({Title = "Anti Lag", Content = "Anti Lag ativado.", Duration = 6})
             else
                 settings().Rendering.QualityLevel = Enum.QualityLevel.Automatic
                 Lighting.GlobalShadows = true
                 Lighting.Technology = Enum.Technology.Future
-                Rayfield:Notify({Title = "Anti Lag", Content = "Anti Lag desativado.", Duration = 4})
             end
         end)
     end
@@ -421,7 +417,6 @@ FPSUI:CreateToggle({
     Callback = function(v)
         ShowFPS = v
         FPSFrame.Visible = v
-        Rayfield:Notify({Title = "FPS Counter", Content = v and "FPS Counter ativado." or "FPS Counter desativado.", Duration = 3})
     end
 })
 
@@ -433,7 +428,6 @@ FPSUI:CreateDropdown({
         local value = Option[1]
         if value == "Unlimited" then TargetFPS = 9999 else TargetFPS = tonumber(value) end
         if setfpscap then setfpscap(TargetFPS) end
-        Rayfield:Notify({Title = "FPS Limit", Content = "FPS limitado para: " .. (value == "Unlimited" and "Ilimitado" or value), Duration = 4})
     end
 })
 
@@ -591,7 +585,7 @@ RunService.RenderStepped:Connect(function()
     end
 end)
 
---// NOTIFICAÃ‡Ã•ES
+--// NOTIFICAÃ‡Ã•ES (APENAS AS DUAS INICIAIS)
 Rayfield:Notify({
     Title = "Aimbot Hub Universal",
     Content = "Loaded / Carregado.",
