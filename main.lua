@@ -404,12 +404,12 @@ FPSUI:CreateToggle({
                     end
                 end
                 
-                Rayfield:Notify({Title = "Anti Lag", Content = "âœ… Anti Lag MÃXIMO ativado para Mobile!", Duration = 6})
+                Rayfield:Notify({Title = "Anti Lag", Content = "Anti Lag ativado.", Duration = 6})
             else
                 settings().Rendering.QualityLevel = Enum.QualityLevel.Automatic
                 Lighting.GlobalShadows = true
                 Lighting.Technology = Enum.Technology.Future
-                Rayfield:Notify({Title = "Anti Lag", Content = "âŒ Anti Lag desativado.", Duration = 4})
+                Rayfield:Notify({Title = "Anti Lag", Content = "Anti Lag desativado.", Duration = 4})
             end
         end)
     end
@@ -421,7 +421,7 @@ FPSUI:CreateToggle({
     Callback = function(v)
         ShowFPS = v
         FPSFrame.Visible = v
-        Rayfield:Notify({Title = "FPS Counter", Content = v and "âœ… FPS Counter ativado." or "âŒ FPS Counter desativado.", Duration = 3})
+        Rayfield:Notify({Title = "FPS Counter", Content = v and "FPS Counter ativado." or "FPS Counter desativado.", Duration = 3})
     end
 })
 
@@ -603,6 +603,6 @@ task.wait(1)
 setclipboard("https://discord.gg/rZuYzZ7zvt")
 Rayfield:Notify({
     Title = "Discord",
-    Content = "âœ… Link do Discord Copiado!\nLink Copied to Clipboard!",
+    Content = "Link do Discord Copiado!\nLink Copied to Clipboard!",
     Duration = 7
 })
